@@ -1,0 +1,7 @@
+node_modules/
+data/*.sqlite
+data/
+server.log
+screens/
+*.log
+.env

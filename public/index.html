@@ -1,0 +1,100 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=theme-color content="#c3002f"><link rel=manifest href="/manifest.json">
+<link rel=icon type="image/png" sizes=32x32 href="/icons/favicon-32.png"><link rel=apple-touch-icon href="/icons/apple-touch-icon.png">
+<meta name=apple-mobile-web-app-capable content=yes><meta name=mobile-web-app-capable content=yes><meta name=apple-mobile-web-app-status-bar-style content=black-translucent><meta name=apple-mobile-web-app-title content="CAN Trade-In">
+<meta name=description content="Get your trade-in value from Central Avenue Nissan in Yonkers, NY.">
+<title>Central Avenue Nissan – Get Your Trade-In Value</title>
+<style>
+:root{--red:#c3002f;--dark:#1a1a1a;--g:#f4f4f6}*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--g);color:var(--dark)}
+header{background:var(--dark);color:#fff;padding:14px 20px;display:flex;align-items:center;gap:12px}.logo{width:38px;height:38px;border-radius:50%;border:3px solid #fff;display:grid;place-items:center;font-weight:800;font-size:11px;letter-spacing:.5px}
+header b{font-size:18px}header small{display:block;opacity:.7;font-size:12px}.hero{background:linear-gradient(135deg,var(--red),#7d001e);color:#fff;padding:36px 20px 70px;text-align:center}
+.hero h1{margin:0 0 8px;font-size:clamp(26px,5vw,40px)}.hero p{margin:0;opacity:.9}main{max-width:720px;margin:-50px auto 40px;padding:0 14px}
+.card{background:#fff;border-radius:14px;box-shadow:0 8px 30px rgba(0,0,0,.08);padding:22px;margin-bottom:16px}h2{font-size:17px;margin:0 0 14px;display:flex;gap:8px;align-items:center}
+.n{background:var(--red);color:#fff;border-radius:50%;width:24px;height:24px;display:inline-grid;place-items:center;font-size:13px}
+label{display:block;font-size:13px;font-weight:600;margin:10px 0 4px}input{width:100%;padding:12px;border:1px solid #ccc;border-radius:8px;font-size:16px}input:focus{outline:2px solid var(--red);border-color:transparent}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media(max-width:560px){.row{grid-template-columns:1fr}}
+.vin{display:flex;gap:8px}.vin input{min-width:0;flex:1;text-transform:uppercase;font-family:monospace;letter-spacing:1px}button{background:var(--red);color:#fff;border:0;border-radius:8px;padding:12px 18px;font-size:16px;font-weight:600;cursor:pointer}button:disabled{opacity:.5}
+.btn2{background:var(--dark)}.veh{background:var(--g);border-radius:8px;padding:12px;margin-top:10px;display:none}.veh b{font-size:18px}
+.conds{display:grid;grid-template-columns:1fr 1fr;gap:10px}@media(max-width:560px){.conds{grid-template-columns:1fr}}.cond{border:2px solid #ddd;border-radius:10px;padding:10px;cursor:pointer}.cond.sel{border-color:var(--red);background:#fff5f7}.cond b{display:block}.cond span{font-size:13px;color:#555}
+.err{color:var(--red);font-size:14px;margin-top:8px}.hint{font-size:12px;color:#777}#go{width:100%;margin-top:6px;padding:15px;font-size:18px}
+#result{display:none;text-align:center}.range{font-size:clamp(30px,7vw,44px);font-weight:800;color:var(--red);margin:8px 0}.disc{background:#fff7e0;border-radius:8px;padding:10px;font-size:14px;margin:12px 0}
+details{text-align:left;font-size:13px;color:#555}footer{text-align:center;font-size:12px;color:#888;padding:20px}
+.vin .scan{background:#fff;color:var(--red);border:2px solid var(--red);white-space:nowrap;padding:10px 12px}
+#scanner{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:50;display:none;flex-direction:column;align-items:center;justify-content:center;padding:16px;color:#fff;text-align:center}
+#scanner video{width:100%;max-width:520px;border-radius:12px;background:#000;max-height:60vh;object-fit:cover}
+.frame{position:relative;width:100%;max-width:520px}.frame:after{content:"";position:absolute;left:8%;right:8%;top:38%;bottom:38%;border:3px solid #fff;border-radius:8px;box-shadow:0 0 0 2000px rgba(0,0,0,.25)}
+#scanner p{font-size:14px;opacity:.85;max-width:420px}#scanner button{margin-top:12px}
+#a2hs{position:fixed;left:12px;right:12px;bottom:12px;background:var(--dark);color:#fff;border-radius:12px;padding:12px 14px;display:none;align-items:center;gap:10px;z-index:40;box-shadow:0 6px 24px rgba(0,0,0,.3);font-size:14px;max-width:560px;margin:auto}
+#a2hs img{width:36px;height:36px;border-radius:8px}#a2hs .t{flex:1}#a2hs button{padding:8px 12px;font-size:14px}#a2hs .x{background:none;padding:4px 8px;font-size:20px}
+</style></head><body>
+<header><div class=logo>NISSAN</div><div><b>Central Avenue Nissan</b><small>Yonkers, NY</small></div></header>
+<section class=hero><h1>Get Your Trade-In Value</h1><p>Instant estimate in under a minute. No obligation.</p></section>
+<main><form id=f novalidate>
+<div class=card id=s1><h2><span class=n>1</span>Your vehicle</h2>
+ <label for=vin>VIN (17 characters)</label><div class=vin><input id=vin maxlength=17 placeholder="17-character VIN" autocomplete=off><button type=button class=scan id=scanbtn aria-label="Scan VIN barcode with camera">&#128247; Scan</button><button type=button class=btn2 id=dec>Decode</button></div>
+ <div class=hint>Tap <b>Scan</b> to read the barcode on the driver door jamb or lower windshield, or find it on the driver-side dashboard, door jamb, registration or insurance card.</div><div class=err id=vinerr></div>
+ <div class=veh id=veh></div>
+ <div class=row><div><label for=mi>Mileage</label><input id=mi inputmode=numeric placeholder="e.g. 45000"></div><div><label for=zip>ZIP (optional)</label><input id=zip inputmode=numeric maxlength=5 placeholder="10704"></div></div>
+ <label>Condition</label><div class=conds id=conds></div></div>
+<div class=card><h2><span class=n>2</span>Where should we send your value?</h2>
+ <label for=nm>Full name</label><input id=nm autocomplete=name>
+ <div class=row><div><label for=ph>Phone</label><input id=ph type=tel autocomplete=tel placeholder="(914) 555-0123"></div><div><label for=em>Email</label><input id=em type=email autocomplete=email></div></div>
+ <div class=hint style="margin-top:8px">By submitting you agree that Central Avenue Nissan may contact you about your trade-in.</div>
+ <div class=err id=err></div><button id=go>Get My Trade-In Value</button></div>
+</form>
+<div class=card id=result></div></main>
+<div id=scanner role=dialog aria-label="VIN scanner"><div class=frame><video id=vid playsinline muted></video></div>
+<p id=scanmsg>Point the rear camera at the VIN barcode on the driver door jamb or the lower windshield. Hold steady about 6&ndash;10 inches away.</p>
+<button type=button class=btn2 id=scanclose>Cancel</button></div>
+<div id=a2hs><img src="/icons/icon-192.png" alt=""><div class=t id=a2hstxt>Add <b>CAN Trade-In</b> to your home screen</div><button type=button id=a2hsbtn>Install</button><button type=button class=x id=a2hsx aria-label=Dismiss>&times;</button></div>
+<footer>© Central Avenue Nissan, Yonkers NY · Estimates are for informational purposes only.</footer>
+<script>
+const $=id=>document.getElementById(id);let cond=null,decoded=null;const VIN=/^[A-HJ-NPR-Z0-9]{17}$/;
+fetch('/api/config').then(r=>r.json()).then(c=>{$('conds').innerHTML=Object.entries(c.conditions).map(([k,v])=>`<div class=cond data-k=${k}><b>${v.label}</b><span>${v.desc}</span></div>`).join('');
+ document.querySelectorAll('.cond').forEach(d=>d.onclick=()=>{document.querySelectorAll('.cond').forEach(x=>x.classList.remove('sel'));d.classList.add('sel');cond=d.dataset.k})});
+$('vin').oninput=e=>{e.target.value=e.target.value.toUpperCase().replace(/[^A-Z0-9]/g,'');if(e.target.value.length===17)decode()};$('dec').onclick=decode;
+async function decode(){const v=$('vin').value;$('vinerr').textContent='';if(!VIN.test(v)){$('vinerr').textContent='VIN must be exactly 17 letters/numbers (no I, O or Q).';return}
+ $('dec').disabled=true;$('dec').textContent='…';try{const r=await fetch('/api/decode/'+v),d=await r.json();if(!r.ok)throw Error(d.error);decoded=d;
+ $('veh').style.display='block';$('veh').innerHTML=`<b>${d.year} ${d.make} ${d.model}</b> ${d.trim||''}<div class=hint>${[d.bodyClass,d.engine,d.drive].filter(Boolean).join(' · ')}</div>`}
+ catch(e){$('vinerr').textContent=e.message;$('veh').style.display='none'}finally{$('dec').disabled=false;$('dec').textContent='Decode'}}
+$('f').onsubmit=async e=>{e.preventDefault();const b={vin:$('vin').value,mileage:$('mi').value.replace(/\D/g,''),condition:cond,zip:$('zip').value,name:$('nm').value,phone:$('ph').value,email:$('em').value};
+ const m=[];if(!VIN.test(b.vin))m.push('valid VIN');if(!b.mileage)m.push('mileage');if(!cond)m.push('condition');if(b.zip&&!/^\d{5}$/.test(b.zip))m.push('5-digit ZIP');if(b.name.trim().length<2)m.push('name');if(b.phone.replace(/\D/g,'').length<10)m.push('phone');if(!/^\S+@\S+\.\S+$/.test(b.email))m.push('email');
+ if(m.length){$('err').textContent='Please provide: '+m.join(', ');return}$('err').textContent='';$('go').disabled=true;$('go').textContent='Calculating…';
+ try{const r=await fetch('/api/appraise',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(b)}),d=await r.json();if(!r.ok)throw Error(d.error);show(d,b)}
+ catch(x){$('err').textContent=x.message}finally{$('go').disabled=false;$('go').textContent='Get My Trade-In Value'}};
+function show(d,b){const v=d.vehicle,e=d.estimate,f=n=>'$'+n.toLocaleString(),k=e.breakdown;$('f').style.display='none';const R=$('result');R.style.display='block';
+ R.innerHTML=`<h2 style="justify-content:center">Thanks, ${b.name.split(' ')[0].replace(/[<>&]/g,'')}! Your estimated trade-in value</h2><div>${v.year} ${v.make} ${v.model} ${v.trim||''}</div><div class=hint>${Number(b.mileage).toLocaleString()} miles · ${b.condition[0].toUpperCase()+b.condition.slice(1)} condition</div>
+ <div class=range>${f(e.low)} – ${f(e.high)}</div><div class=disc><b>Estimated range, final offer subject to in-person inspection.</b></div>
+ <p>A Central Avenue Nissan specialist will reach out shortly to lock in your offer.</p><button onclick="location.reload()" class=btn2>Value another vehicle</button>
+ <details><summary>How we estimated this</summary><ul><li>Base new price: ${f(k.baseMsrp)} (${k.msrpSource})</li><li>Age: ${k.ageYears} yrs → ×${k.ageFactor}</li><li>Mileage vs ${k.expectedMiles.toLocaleString()} expected → ×${k.mileageFactor}</li><li>Condition → ×${k.conditionFactor}</li><li>Trade-in factor ×${k.tradeInFactor}</li></ul></details>`;R.scrollIntoView()}
+
+// ---------- VIN camera scanner (ZXing, bundled locally at /vendor) ----------
+let scanCtl=null;
+function cleanVin(t){t=(t||'').toUpperCase().replace(/[^A-Z0-9]/g,'');if(t.length===18&&t[0]==='I')t=t.slice(1); // Code 39 VINs often carry a leading I (import) char
+ if(VIN.test(t))return t;const m=t.match(/[A-HJ-NPR-Z0-9]{17}/);return m?m[0]:null}
+function loadZXing(){if(window.ZXingBrowser)return Promise.resolve();const srcs=['/vendor/zxing-browser.min.js','https://cdn.jsdelivr.net/npm/@zxing/browser@0.1.5/umd/zxing-browser.min.js'];
+ return srcs.reduce((p,src)=>p.catch(()=>new Promise((ok,no)=>{const s=document.createElement('script');s.src=src;s.onload=()=>window.ZXingBrowser?ok():no();s.onerror=no;document.head.appendChild(s)})),Promise.reject())}
+function stopScan(){try{scanCtl&&scanCtl.stop()}catch(e){}scanCtl=null;$('scanner').style.display='none'}
+$('scanclose').onclick=stopScan;
+$('scanbtn').onclick=async()=>{$('vinerr').textContent='';
+ if(!window.isSecureContext||!navigator.mediaDevices||!navigator.mediaDevices.getUserMedia){$('vinerr').textContent='Camera scanning needs a secure (https) connection and a device camera. Please type the VIN instead.';return}
+ $('scanner').style.display='flex';$('scanmsg').textContent='Starting camera…';
+ try{await loadZXing();const Z=window.ZXingBrowser,L=Z.BarcodeFormat?Z:null;
+  const hints=new Map();try{const F=Z.BarcodeFormat;hints.set(2,[F.CODE_39,F.DATA_MATRIX,F.QR_CODE,F.CODE_128,F.PDF_417]);hints.set(3,true)}catch(e){} // 2=POSSIBLE_FORMATS 3=TRY_HARDER
+  const reader=new Z.BrowserMultiFormatReader(hints);
+  $('scanmsg').textContent='Point the rear camera at the VIN barcode on the driver door jamb or lower windshield.';
+  scanCtl=await reader.decodeFromConstraints({video:{facingMode:{ideal:'environment'},width:{ideal:1920},height:{ideal:1080}}},$('vid'),(res)=>{
+   if(!res)return;const v=cleanVin(res.getText());if(!v){$('scanmsg').textContent='Read "'+res.getText().slice(0,30)+'", which is not a VIN. Try the other barcode.';return}
+   if(navigator.vibrate)navigator.vibrate(80);stopScan();$('vin').value=v;decode()});
+ }catch(e){stopScan();const n=e&&e.name;
+  $('vinerr').textContent=n==='NotAllowedError'?'Camera permission was denied. Allow camera access in your browser settings, or type the VIN.':n==='NotFoundError'||n==='OverconstrainedError'?'No camera found on this device. Please type the VIN.':'Scanner unavailable ('+(e&&e.message||'error')+'). Please type the VIN.'}};
+// ---------- PWA: service worker + Add to Home Screen ----------
+if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('/sw.js').catch(console.error));
+let deferred=null;const standalone=matchMedia('(display-mode: standalone)').matches||navigator.standalone;const dismissed=()=>localStorage.getItem('a2hs-x');
+$('a2hsx').onclick=()=>{$('a2hs').style.display='none';localStorage.setItem('a2hs-x','1')};
+window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferred=e;if(!dismissed()&&!standalone){$('a2hs').style.display='flex';$('a2hsbtn').style.display=''}});
+$('a2hsbtn').onclick=async()=>{if(!deferred)return;deferred.prompt();await deferred.userChoice;deferred=null;$('a2hs').style.display='none'};
+window.addEventListener('appinstalled',()=>$('a2hs').style.display='none');
+const isIOS=/iphone|ipad|ipod/i.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1),isSafari=/^((?!crios|fxios|edgios).)*safari/i.test(navigator.userAgent);
+if(isIOS&&isSafari&&!standalone&&!dismissed()){$('a2hstxt').innerHTML='Install: tap <b>Share</b> &#x2191;&#xFE0E; then <b>Add to Home Screen</b>';$('a2hsbtn').style.display='none';setTimeout(()=>$('a2hs').style.display='flex',1500)}
+</script></body></html>
